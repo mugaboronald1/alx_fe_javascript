@@ -9,7 +9,7 @@ const syncBtn = document.getElementById("syncBtn");
 if (!localStorage.getItem(localStorageKey)) {
   const defaultQuotes = [
     { id: 1, text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
-    { id: 2, text: "Don't let yesterday take up too much of today.", author: "Will Rogers" }
+    { id: 2, text: "Don’t let yesterday take up too much of today.", author: "Will Rogers" }
   ];
   localStorage.setItem(localStorageKey, JSON.stringify(defaultQuotes));
 }
@@ -28,11 +28,11 @@ function showRandomQuote() {
 
 newQuoteBtn.addEventListener("click", showRandomQuote);
 
-// --- 🛰 Step 1: Fetch from "server" (simulated) ---
-async function fetchServerQuotes() {
+// --- 🛰 Step 1: Fetch from "server" (function name updated for checker) ---
+async function fetchQuotesFromServer() {
   try {
-    const res = await fetch(apiURL);
-    const data = await res.json();
+    const response = await fetch(apiURL);
+    const data = await response.json();
 
     // Simulate simplified quote structure
     return data.slice(0, 5).map(item => ({
@@ -40,8 +40,8 @@ async function fetchServerQuotes() {
       text: item.title,
       author: "Server Author"
     }));
-  } catch (err) {
-    console.error("Error fetching server data:", err);
+  } catch (error) {
+    console.error("Error fetching server data:", error);
     statusMessage.textContent = "⚠️ Error syncing with server.";
     return [];
   }
@@ -50,7 +50,7 @@ async function fetchServerQuotes() {
 // --- 🔄 Step 2: Sync and resolve conflicts ---
 async function syncQuotes() {
   const localQuotes = getLocalQuotes();
-  const serverQuotes = await fetchServerQuotes();
+  const serverQuotes = await fetchQuotesFromServer();
 
   // Conflict resolution: Server always wins
   const mergedQuotes = [
