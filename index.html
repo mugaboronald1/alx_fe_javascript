@@ -4,31 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <!-- Category Filter -->
-  <div>
-    <label for="categoryFilter">Filter by Category:</label>
-    <select id="categoryFilter" onchange="filterQuotes()">
-      <option value="all">All Categories</option>
-    </select>
+  <div id="quoteContainer"></div>
+
+  <div class="controls">
+    <button id="newQuoteBtn">New Quote</button>
+    <button id="syncBtn">Sync with Server</button>
   </div>
 
-  <!-- Quote Display -->
-  <div id="quoteDisplay"></div>
-
-  <!-- Buttons -->
-  <button id="newQuote">Show New Quote</button>
-
-  <!-- Add New Quote -->
-  <div id="addQuoteForm">
-    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button onclick="addQuote()">Add Quote</button>
-  </div>
+  <p id="statusMessage"></p>
 
   <script src="script.js"></script>
 </body>
