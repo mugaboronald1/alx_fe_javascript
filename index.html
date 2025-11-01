@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dynamic Quote Generator</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quote Generator with Server Sync</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Dynamic Quote Generator</h1>
+  <header>
+    <h1>Dynamic Quote Generator</h1>
+  </header>
 
-        <div id="quote-box">
-            <p id="quote-text">Click "New Quote" to start</p>
-            <p id="quote-author"></p>
-        </div>
+  <section class="controls">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+    </select>
+  </section>
 
-        <div class="buttons">
-            <button id="new-quote">New Quote</button>
-            <button id="add-quote">Add Quote</button>
-            <button id="sync">Sync Quotes</button>
-        </div>
+  <div id="notification" class="notification" style="display:none;">
+    <!-- Notifications will appear here -->
+  </div>
 
-        <div id="notification" class="notification hidden"></div>
-    </div>
+  <main id="quoteContainer" class="quote-container">
+    <!-- Quotes will be displayed here -->
+  </main>
 
-    <script src="script.js"></script>
+  <footer>
+    <p>Dynamic Quote Generator © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
