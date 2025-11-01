@@ -1,87 +1,57 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-  max-width: 700px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 400px;
 }
 
-h1 {
-  text-align: center;
-  color: #0057FF;
+#quote-box {
+    margin: 20px 0;
 }
 
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
+#quote-text {
+    font-size: 1.3em;
+    color: #333;
 }
 
-.controls select,
-.controls button {
-  padding: 8px 12px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+#quote-author {
+    color: #555;
+    margin-top: 10px;
 }
 
-.quote-box {
-  font-size: 1.2rem;
-  font-style: italic;
-  text-align: center;
-  margin: 20px 0;
-  padding: 15px;
-  background-color: #e7f0ff;
-  border-left: 5px solid #0057FF;
-  border-radius: 5px;
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0057FF;
+    color: white;
+    cursor: pointer;
 }
 
-.status {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #ff6600;
+button:hover {
+    background-color: #0040cc;
 }
 
-.add-quote {
-  margin-top: 30px;
+.notification {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #00C236;
+    color: white;
 }
 
-.add-quote h2 {
-  text-align: center;
-  color: #0057FF;
-}
-
-.add-quote input {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.add-quote button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #0057FF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.add-quote button:hover {
-  background-color: #0041cc;
+.hidden {
+    display: none;
 }
