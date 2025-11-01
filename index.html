@@ -4,19 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Quote Generator</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Dynamic Quote Generator</h1>
+  <div class="container">
+    <h1>Dynamic Quote Generator</h1>
 
-  <div id="quoteContainer"></div>
+    <!-- Category filter -->
+    <div class="controls">
+      <label for="categoryFilter">Filter by Category:</label>
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+      </select>
+      <button id="newQuoteBtn">Show Random Quote</button>
+      <button id="syncBtn">Sync with Server</button>
+    </div>
 
-  <div class="controls">
-    <button id="newQuoteBtn">New Quote</button>
-    <button id="syncBtn">Sync with Server</button>
+    <!-- Status messages -->
+    <div id="statusMessage" class="status"></div>
+
+    <!-- Quote display -->
+    <div id="quoteContainer" class="quote-box"></div>
+
+    <!-- Add new quote form -->
+    <div class="add-quote">
+      <h2>Add a New Quote</h2>
+      <input type="text" id="newQuoteText" placeholder="Enter quote text">
+      <input type="text" id="newQuoteCategory" placeholder="Enter quote category">
+      <button onclick="addQuote(document.getElementById('newQuoteText').value, document.getElementById('newQuoteCategory').value)">
+        Add Quote
+      </button>
+    </div>
   </div>
-
-  <p id="statusMessage"></p>
 
   <script src="script.js"></script>
 </body>

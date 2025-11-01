@@ -1,39 +1,87 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f9f9f9;
+  background-color: #f0f4f8;
   color: #333;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 h1 {
-  color: #0057ff;
+  text-align: center;
+  color: #0057FF;
 }
 
-#quoteContainer {
-  margin: 20px auto;
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls select,
+.controls button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.quote-box {
+  font-size: 1.2rem;
+  font-style: italic;
+  text-align: center;
+  margin: 20px 0;
   padding: 15px;
-  width: 60%;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background-color: #e7f0ff;
+  border-left: 5px solid #0057FF;
+  border-radius: 5px;
 }
 
-button {
-  margin: 5px;
-  padding: 10px 20px;
-  background-color: #0057ff;
+.status {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+.add-quote {
+  margin-top: 30px;
+}
+
+.add-quote h2 {
+  text-align: center;
+  color: #0057FF;
+}
+
+.add-quote input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-quote button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #0057FF;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0040cc;
-}
-
-#statusMessage {
-  margin-top: 10px;
-  font-style: italic;
+.add-quote button:hover {
+  background-color: #0041cc;
 }
