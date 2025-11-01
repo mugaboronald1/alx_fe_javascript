@@ -7,29 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="app-container">
-        <h1>Dynamic Quote Generator</h1>
+    <h1>Dynamic Quote Generator</h1>
 
-        <!-- Display Random Quote -->
-        <div id="quoteDisplay">Loading quotes...</div>
+    <!-- Category Dropdown will be added by script.js -->
 
-        <!-- Controls -->
-        <div class="controls">
-            <button id="newQuote" onclick="showRandomQuote()">Show Random Quote</button>
-        </div>
+    <div id="quoteDisplay"></div>
+    <button id="newQuote">Show New Quote</button>
 
-        <!-- Add New Quote -->
-        <div class="add-quote">
-            <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-            <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-            <button onclick="addQuote()">Add Quote</button>
-        </div>
-
-        <!-- Import/Export JSON -->
-        <div class="json-controls">
-            <button onclick="exportToJson()">Export Quotes as JSON</button>
-            <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
-        </div>
+    <!-- Form to add new quotes -->
+    <div id="addQuoteForm">
+        <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+        <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+        <button onclick="addQuote()">Add Quote</button>
     </div>
 
     <script src="script.js"></script>
