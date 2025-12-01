@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quote Generator</title>
+  <style>
+    /* Basic styling for better readability */
+    body { font-family: sans-serif; margin: 20px; text-align: center; }
+    h1 { color: #333; }
+    #quoteDisplay {
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      max-width: 600px;
+      min-height: 80px;
+      background-color: #f0f8ff;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #quoteDisplay p { margin: 0; text-align: center; }
+    #quoteDisplay span { text-align: center; }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover { background-color: #0056b3; }
+    input[type="text"], input[type="file"], select {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px; /* Adjust as needed */
+    }
+    #addQuoteForm button { background-color: #28a745; }
+    #addQuoteForm button:hover { background-color: #218838; }
+    #importExportControls button { background-color: #6c757d; } /* Grey for controls */
+    #importExportControls button:hover { background-color: #5a6268; }
+    #filterSection {
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f7f7f7;
+    }
+    #syncControls {
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 15px;
+        border: 1px solid #cce;
+        border-radius: 8px;
+        background-color: #e6f7ff;
+    }
+    #syncControls button {
+        background-color: #ffc107; /* Yellow for sync */
+        color: #333;
+    }
+    #syncControls button:hover {
+        background-color: #e0a800;
+    }
+    #syncStatus {
+        margin-top: 10px;
+        padding: 8px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        background-color: #fff;
+        border: 1px solid #eee;
+        min-height: 20px;
+        text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Quote Generator</h1>
+
+  <!-- Category Filter Section -->
+  <div id="filterSection">
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterQuotes()">
+      <option value="all">All Categories</option>
+      <!-- Dynamically populated categories will go here -->
+    </select>
+  </div>
+
+  <div id="quoteDisplay"></div>
+  <button id="newQuote">Show New Quote</button>
+
+  <!-- Static form for adding quotes -->
+  <div id="addQuoteForm">
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button onclick="addQuote()">Add Quote</button>
+  </div>
+
+  <!-- Static controls for Import/Export -->
+  <div id="importExportControls" style="margin-top: 20px;">
+    <button id="exportQuotesBtn">Export Quotes</button>
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  </div>
+
+  <!-- NEW: Sync Controls Section -->
+  <div id="syncControls">
+    <h2>Server Sync</h2>
+    <button id="syncNowBtn">Sync Now (Server Precedence)</button>
+    <div id="syncStatus">No sync performed yet.</div>
+    <p style="font-size: 0.8em; color: #666; margin-top: 10px;">
+        *Server data is simulated using 'serverQuotes' in localStorage.
+        <br>Auto-sync every 5 seconds.
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
